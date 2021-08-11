@@ -1,0 +1,92 @@
+Expressão regular
+
+\d = digito	ou	[0-9]
+. = all
+\d? = opcional	ou	\d{0,1}
+[dd] = um ou outro
+\s = espaço em branco
+\d+ = um ou mais vezes
+[A-ZÇ] = alguma letra maiúscula
+[a-zç] = alguma letra minúscula
+
+------------------------
+
+? = zero ou uma vez
++ = uma ou mais vezes
+* = zero ou mais vezes
+
+{n} = exatamente n vezes
+{n,} = no mínimo n vezes
+{n,m} = no mínimo n+1 vezes, no máximo m vezes
+
+-----------------------
+
+QUANTIFIER
+{n} = exatamente n vezes
+{n, } = no mínimo n vezes
+{n,m} = no mínimo n, no máximo m vezes
+
+? = zero ou uma vez
++ = uma ou mais vezes
+* = zero ou mais vezes
+
+CLASSES DE CHAR - [] //caractere
+
+[A-Z] = letras de A até Z MAIÚSCULO //[A-ZÇ] para Ç (caractere especial)
+[123] = 1, 2 ou 3
+\d = todos os dígitos //[0-9]
+\s = whitespace //espaço em branco [  \t\r\n\f]
+\w = wordchar //[A-Za-z0-9_]
+[\wõôçâã] = wordchar com alguns caracteres especiais
+</\1> = backreferences //faz referencia ao primeiro grupo (1 = numero do grupo)
+
+ÂNCORAS
+\b = word boundary //contrário de wordchar, não pode ter nenhum caractere do wordchar
+^ = início
+$ = final
+
+GRUPOS
+(?:de\s+)? = Non-capturing group //palavra "de" se torna opcional
+
+EXEMPLO:
+([0123]?\d)\s+(?:de\s+)?([A-Z][a-zç]{1,8})\s+(?:de\s+)?([12]\d{3})
+ ISSO DEVOLVE OS GRUPOS:
+
+21 de Maio de 1993 ||| 21 ||| Maio ||| 1993
+
+-------------------------------------
+
++ = "ganancioso" //pega todos os caracteres possíveis
++? = "preguiçoso" //para no primeiro caractere indicado
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
